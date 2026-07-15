@@ -36,7 +36,7 @@ public class SucursalControllerTest {
         @Autowired
         private MockMvc mockMvc;
 
-        @SuppressWarnings("removal")
+       
         @MockitoBean
         private SucursalService sucursalService;
 

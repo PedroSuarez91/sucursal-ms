@@ -56,7 +56,7 @@ public class SucursalService {
         dto.setHorario(sucursal.getHorario());
 
         try {
-            String urlBodega = "http://localhost:8xxx/api/v1/bodega/" + sucursal.getIdBodega();
+            String urlBodega = "http://localhost:9094/api/v1/bodega/" + sucursal.getIdBodega();
             BodegaDTO bodega = restTemplate.getForObject(urlBodega, BodegaDTO.class);
             if (bodega != null) {
                 dto.setNombreBodega(bodega.getNombreBodega());
@@ -74,7 +74,7 @@ public class SucursalService {
             return null;
 
         try {
-            String urlInventario = "http://localhost:8xxx/api/v1/inventario/stockPorBodega/" + sucursal.getIdBodega();
+            String urlInventario = "http://localhost:9093/api/v1/inventario/stockPorBodega/" + sucursal.getIdBodega();
             String stock = restTemplate.getForObject(urlInventario, String.class);
             return stock;
         } catch (Exception e) {
